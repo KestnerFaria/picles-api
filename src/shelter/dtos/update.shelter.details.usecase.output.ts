@@ -3,8 +3,8 @@ export default class UpdateShelterDetailsUseCaseOutput{
     whatsapp: string;
     email: string;
     phone: string;
-    createAt: Date;
-    updateAt: Date;
+    createdAt: Date;
+    updatedAt: Date;
 
     constructor(data: Partial<UpdateShelterDetailsUseCaseOutput>){
         Object.assign(this,data);
