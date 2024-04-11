@@ -23,7 +23,8 @@ export class UpdatePetByIdUsecase implements IUseCase<UpdatePetByIdUseCaseInput,
             throw new PetNotFoundError()
         }
         await this.petRepository.updateById({
-            ...input
+            ...input,
+            _id: input.id
         });
 
         pet = await this.getPetById(input.id)

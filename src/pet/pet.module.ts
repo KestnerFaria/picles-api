@@ -7,6 +7,7 @@ import PetRepository from './pet.repository';
 import { Pet, PetSchema } from './schemas/pet.schema';
 import GetPetByIdUseCase from './usecases/get.pet.by.id.usecase';
 import { UpdatePetByIdUsecase } from './usecases/update.pet.by.id.usecase';
+import DeletePetByIdUseCase from './usecases/delete.pet.by.id.usecase';
 
 @Module({
   controllers: [PetController],
@@ -25,6 +26,10 @@ import { UpdatePetByIdUsecase } from './usecases/update.pet.by.id.usecase';
     {
       provide: PetTokens.updatePetByIdUseCase,
       useClass: UpdatePetByIdUsecase
+    },
+    {
+      provide: PetTokens.deletePetByIdUseCase,
+      useClass: DeletePetByIdUseCase
     },
     {
       provide: PetTokens.petRepository,
